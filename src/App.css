@@ -1,0 +1,49 @@
+html {
+    scrollbar-width: none;
+    background: #09090b;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    isolation: isolate;
+}
+
+.grid-background {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: radial-gradient(circle at center,
+            rgba(0, 0, 0, 1) 20%,
+            rgba(0, 0, 0, 0.7) 50%,
+            transparent 100%);
+    -webkit-mask-image: radial-gradient(circle at center,
+            rgba(0, 0, 0, 1) 20%,
+            rgba(0, 0, 0, 0.7) 50%,
+            transparent 100%);
+    z-index: -1;
+}
+
+.grid-background::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.12) 2px, transparent 2px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.12) 2px, transparent 2px);
+    background-size: 80px 80px;
+    mask-image: radial-gradient(circle at center,
+            black 0%,
+            transparent 45%);
+    -webkit-mask-image: radial-gradient(circle at center,
+            black 0%,
+            transparent 45%);
+    z-index: -1;
+}
